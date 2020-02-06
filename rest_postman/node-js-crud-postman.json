@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "95056eb6-26c6-488f-82d4-82021c0df6a3",
+		"name": "node-js-crud-postman-request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admins",
+			"item": [
+				{
+					"name": "Login Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "email@adm_um.com.br",
+									"type": "text"
+								},
+								{
+									"key": "senha",
+									"value": "Senha[Adm_1]",
+									"type": "text"
+								},
+								{
+									"key": "login",
+									"value": "true",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2500/node-js-crud/routes/logins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2500",
+							"path": [
+								"node-js-crud",
+								"routes",
+								"logins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2500/node-js-crud/routes/logouts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2500",
+							"path": [
+								"node-js-crud",
+								"routes",
+								"logouts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nome",
+									"value": "Usuário Um",
+									"description": "Campo do nome do usuário",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "email@um.com",
+									"description": "Campo de e-mail",
+									"type": "text"
+								},
+								{
+									"key": "telefone",
+									"value": "(55) 7 1111 1111",
+									"description": "Campo de telefone",
+									"type": "text"
+								},
+								{
+									"key": "local_foto",
+									"value": "src/img/user_01.png",
+									"description": "Local da foto",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2500/node-js-crud/routes/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2500",
+							"path": [
+								"node-js-crud",
+								"routes",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2500/node-js-crud/routes/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2500",
+							"path": [
+								"node-js-crud",
+								"routes",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2500/node-js-crud/routes/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2500",
+							"path": [
+								"node-js-crud",
+								"routes",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nome",
+									"value": "_Usuário Dois",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2500/node-js-crud/routes/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2500",
+							"path": [
+								"node-js-crud",
+								"routes",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nome",
+									"value": "_Usuário Dois",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2500/node-js-crud/routes/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2500",
+							"path": [
+								"node-js-crud",
+								"routes",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Home Page Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2500/node-js-crud/routes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2500",
+					"path": [
+						"node-js-crud",
+						"routes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

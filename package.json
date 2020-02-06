@@ -1,0 +1,35 @@
+{
+  "name": "node-js-crud",
+  "version": "1.0.0",
+  "description": "Servidor REST para um CRUD com o Banco de Dados SQLite 3, Sequelize V5, Express, Body-Parser e Nodemon.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Node.Js",
+    "Sequelize",
+    "Body-Parser",
+    "REST"
+  ],
+  "author": "Francisco Cláudio",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-sqlite3": "^0.9.11",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "js-md5": "^0.7.3",
+    "sequelize": "^5.21.3",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1"
+  },
+  "engines": {
+    "node": "8.16.2"
+  }
+}
