@@ -29,7 +29,7 @@ server.use(session(
 
 server.use('/node-js-crud/routes', index, login, users);
 
-var port = 2500;
+var port = process.env.PORT || 2500;
 
 server.listen(port, 'localhost', () => {
     console.log('Server running on the port: 2500.')
