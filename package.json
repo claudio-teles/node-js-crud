@@ -30,7 +30,6 @@
     "sequelize-cli": "^5.5.1"
   },
   "engines": {
-    "node": "8.16.2",
-    "npm": "6.4.1"
+    "node": "8.x"
   }
 }
