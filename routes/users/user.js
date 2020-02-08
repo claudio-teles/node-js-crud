@@ -4,7 +4,7 @@ const router_user = express.Router();
 const { user } = require('../../models');
 const session_email = require('../../_session/session');
 
-router_user.post('/users', (req, res)=>{
+router_user.post('/users', (req, res) => {
     req.session.email = session_email.email;
     console.log('Session: '+session_email.email+'.');
     if (req.session.email !== '') {
@@ -20,13 +20,13 @@ router_user.post('/users', (req, res)=>{
         ).then(
             usuario_cadastrado => {
                 if (usuario_cadastrado !== null) {
-                    res.status(201).send(
+                    res.status(201).header('Access-Control-Allow-Origin', '*').send(
                         {
                             cadastrado: true
                         }
                     )
                 } else {
-                    res.status(204).send(
+                    res.status(204).header('Access-Control-Allow-Origin', '*').send(
                         {
                             cadastrado: false
                         }
@@ -37,16 +37,16 @@ router_user.post('/users', (req, res)=>{
     }
 });
 
-router_user.get('/users/:id', (req, res)=>{
+router_user.get('/users/:id', (req, res) => {
     req.session.email = session_email.email;
     console.log('Session: '+session_email.email+'.');
     if (req.session.email !== '') {
         user.findByPk(req.params.id).then(
             usuario => {
                 if (usuario !== null) {
-                    res.status(200).send(usuario);
+                    res.status(200).header('Access-Control-Allow-Origin', '*').send(usuario);
                 } else {
-                    res.status(404).send(
+                    res.status(404).header('Access-Control-Allow-Origin', '*').send(
                         {
                             usuario_encontrado: false
                         }
@@ -57,7 +57,7 @@ router_user.get('/users/:id', (req, res)=>{
     }
 });
 
-router_user.get('/users', (req, res)=>{
+router_user.get('/users', (req, res) => {
     req.session.email = session_email.email;
     console.log('Session: '+session_email.email+'.');
     if (req.session.email !== '') {
@@ -66,9 +66,9 @@ router_user.get('/users', (req, res)=>{
         }).then(
             usuarios => {
                 if (usuarios !== null) {
-                    res.status(200).send(usuarios);
+                    res.status(200).header('Access-Control-Allow-Origin', '*').send(usuarios);
                 } else {
-                    res.status(404).send(
+                    res.status(404).header('Access-Control-Allow-Origin', '*').send(
                         {
                             usuarios_encontrados: false
                         }
@@ -79,7 +79,7 @@ router_user.get('/users', (req, res)=>{
     }
 });
 
-router_user.put('/users/:id', (req, res)=>{
+router_user.put('/users/:id', (req, res) => {
     req.session.email = session_email.email;
     console.log('Session: '+session_email.email+'.');
     if (req.session.email !== '') {
@@ -123,17 +123,17 @@ router_user.put('/users/:id', (req, res)=>{
                     dados_atualizado.telefone !== '' || dados_atualizado.local_foto !== '' ||
                     dados_atualizado.updatedAt !== ''
                 ) {
-                    res.status(200).send(dados_atualizado)
+                    res.status(200).header('Access-Control-Allow-Origin', '*').send(dados_atualizado)
                 } else {
                     dados_atualizado.usuario_atualizado = false;
-                    res.status(204).send(dados_atualizado)
+                    res.status(204).header('Access-Control-Allow-Origin', '*').send(dados_atualizado)
                 }
             }
         )
     }
 });
 
-router_user.delete('/users/:id', (req, res)=>{
+router_user.delete('/users/:id', (req, res) => {
     req.session.email = session_email.email;
     console.log('Session: '+session_email.email+'.');
     if (req.session.email !== null) {
@@ -141,13 +141,13 @@ router_user.delete('/users/:id', (req, res)=>{
             usuario => {
                 if (usuario !== '') {
                     usuario.destroy();
-                    res.status(200).send(
+                    res.status(200).header('Access-Control-Allow-Origin', '*').send(
                         {
                             usuario_deletado: true
                         }
                     )
                 } else {
-                    res.status(404).send(
+                    res.status(404).header('Access-Control-Allow-Origin', '*').send(
                         {
                             usuario_deletado: true
                         }

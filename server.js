@@ -1,5 +1,5 @@
 const express = require("express");
-const session = require("express-session")
+const session = require("express-session");
 
 var SQLiteStore = require('connect-sqlite3')(session);
 const bodyParser = require("body-parser");
@@ -8,7 +8,7 @@ const index = require('./routes/index');
 const login = require('./routes/login/login');
 const users = require('./routes/users/user')
 
-var server = express();
+const server = express();
 
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
@@ -29,8 +29,8 @@ server.use(session(
 
 server.use('/node-js-crud/routes', index, login, users);
 
-var port = process.env.PORT || 2500;
+var port = process.env.PORT || 5000;
 
 server.listen(port, 'localhost', () => {
-    console.log('Server running on the port: 2500.')
+    console.log('Server running on the port: '+port+'.')
 });
